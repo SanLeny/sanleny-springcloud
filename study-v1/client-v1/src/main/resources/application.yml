@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: study-v1
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/,http://localhost:10003/eureka/
