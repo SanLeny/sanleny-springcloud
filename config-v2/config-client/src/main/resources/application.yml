@@ -1,0 +1,11 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: config-client
+###\u5B9A\u4E49\u5F00\u542Fenv
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env
