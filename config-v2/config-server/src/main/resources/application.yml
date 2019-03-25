@@ -1,0 +1,18 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          ##定义去拉取配置的地址
+#          uri: F:\Project\JAVA\github_project\sanleny-springcloud\config-v2\config-server\src\main\resources\configs
+          uri: ${user.dir}\config-v2\config-server\src\main\resources\configs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
