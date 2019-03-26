@@ -18,7 +18,7 @@ eureka:
     register-with-eureka: false
     ##客户端默认去这个地址找注册中心
     service-url:
-      defaultZone: http://localhost:10001/eureka/,http://localhost:10002/eureka/,http://localhost:10003/eureka/
+      defaultZone: http://localhost:10001/eureka/
   server:
     ### 当eureka启动时，不能从集群节点中获取到instance注册信息，应该等多久
     wait-time-in-ms-when-sync-empty: 0

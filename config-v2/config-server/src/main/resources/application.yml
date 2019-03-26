@@ -8,8 +8,10 @@ spring:
       server:
         git:
           ##定义去拉取配置的地址
-#          uri: F:\Project\JAVA\github_project\sanleny-springcloud\config-v2\config-server\src\main\resources\configs
-          uri: ${user.dir}\config-v2\config-server\src\main\resources\configs
+#          uri: F:\Project\configs
+          uri: https://github.com/SanLeny/sanleny-pringcloud-config.git
+          #定义为强制向git去拉取配置
+          force-pull: true
 
 management:
   endpoints:
