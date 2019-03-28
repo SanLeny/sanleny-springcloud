@@ -5,6 +5,9 @@ spring:
       name: eurekaserver
       #去获取到配置中心的地址
       uri: http://localhost:5000/
+      #对应security的账号和密码
+      username: sanleny
+      password: 123456
   profiles:
     #使用的环境
     active: test

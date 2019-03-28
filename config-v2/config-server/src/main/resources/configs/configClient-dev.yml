@@ -1,4 +1,5 @@
-name: sanleny
+#等价于 name: SanLeny
+name: '{cipher}ad70dee24b9589a5149c78ab7b1efcc716d748b51d8d657f76e3bf6f68224329'
 age: 18
 
 eureka:

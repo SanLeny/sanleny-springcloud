@@ -12,12 +12,14 @@ spring:
           uri: https://github.com/SanLeny/sanleny-pringcloud-config.git
           #定义为强制向git去拉取配置
           force-pull: true
+        ##启用加密算法
         encrypt:
-          enabled: false
+          enabled: true
+  #引入账号密码机制
   security:
     user:
-      password: 123456
       name: sanleny
+      password: 123456
 #开启端口
 management:
   endpoints:
