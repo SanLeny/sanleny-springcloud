@@ -1,0 +1,7 @@
+name: sanleny
+age: 18
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/

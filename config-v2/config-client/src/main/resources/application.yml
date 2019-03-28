@@ -1,11 +1,16 @@
 server:
-  port: 10000
+  port: 8002
 spring:
   application:
     name: config-client
-###\u5B9A\u4E49\u5F00\u542Fenv
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+#定义开启端口
 management:
   endpoints:
     web:
       exposure:
-        include: env
+        #让客户端支持env和refresh方式
+        include: env,refresh

@@ -2,7 +2,7 @@ spring:
   cloud:
     config:
       #定义为config-server 文件的名字
-      name: eurekaserver
+      name: configClient
       #去获取到配置中心的地址
       uri : http://localhost:5000/
   ##使用的环境配置
