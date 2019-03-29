@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConfigClientApplication {
 
     public static void main(String[] args) {
-        publishEvent();
+//        publishEvent();
         SpringApplication.run(ConfigClientApplication.class, args);
     }
 

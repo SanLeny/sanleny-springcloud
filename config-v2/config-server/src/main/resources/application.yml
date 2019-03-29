@@ -4,6 +4,11 @@ spring:
   application:
     name: config-server
   cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          #Kafka的服务端列表
+#          brokers: sanleny70.com:9092,sanleny71.com:9092,sanleny72.com:9092
     config:
       server:
         git:
@@ -13,16 +18,33 @@ spring:
           #定义为强制向git去拉取配置
           force-pull: true
         ##启用加密算法
-        encrypt:
-          enabled: true
-  #引入账号密码机制
-  security:
-    user:
-      name: sanleny
-      password: 123456
-#开启端口
+#        encrypt:
+#          enabled: true
+#  #引入账号密码机制
+#  security:
+#    user:
+#      name: sanleny
+#      password: 123456
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+##开启端口
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+#spring:
+#  application:
+#    name: app-provider-config
+#  cloud:
+#    config:
+#      enabled: true
+#      server:
+#        svn:
+#          uri: http://ip:port/svn/mogo/Coding/app-hotpoint-parent/app-global-config
+#          username: username
+#          password: password
+#          default-label: config-repo

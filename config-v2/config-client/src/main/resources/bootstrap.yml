@@ -6,8 +6,8 @@ spring:
       #去获取到配置中心的地址
       uri : http://localhost:5000/
       #对应security的账号和密码
-      username: sanleny
-      password: 123456
+#      username: sanleny
+#      password: 123456
   ##使用的环境配置
   profiles:
     active: dev
