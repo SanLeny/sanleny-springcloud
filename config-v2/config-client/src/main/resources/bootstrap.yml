@@ -4,14 +4,24 @@ spring:
       #定义为config-server 文件的名字
       name: configClient
       #去获取到配置中心的地址
-      uri : http://localhost:5000/
+#      uri : http://localhost:5000/  #配置中心和注册中心结合使用 不再去uri中获取
       #对应security的账号和密码
 #      username: sanleny
 #      password: 123456
+      #配置中心和注册中心结合使用 将uri地址改为service-id.
+      discovery:
+        service-id: config-server
+        enabled: true
   ##使用的环境配置
   profiles:
     active: dev
+#eureka:
+#  client:
+#    ##禁止注册到server上
+#    enabled: false
 eureka:
   client:
-    ##禁止注册到server上
-    enabled: false
+    service-url:
+      #      defaultZone: http://localhost:10001/eureka/
+      #配置中心和注册中心结合使用 此时需要写到自己这里
+      defaultZone: http://127.0.0.1:10001/eureka/

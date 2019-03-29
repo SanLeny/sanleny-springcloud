@@ -36,6 +36,16 @@ management:
     web:
       exposure:
         include: "*"
+
+##配置中心和注册中心结合使用 把自己当成客户端注册到注册中心
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+    enabled: true
+
 #spring:
 #  application:
 #    name: app-provider-config
