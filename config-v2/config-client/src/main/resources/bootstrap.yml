@@ -11,3 +11,7 @@ spring:
   ##使用的环境配置
   profiles:
     active: dev
+eureka:
+  client:
+    ##禁止注册到server上
+    enabled: false

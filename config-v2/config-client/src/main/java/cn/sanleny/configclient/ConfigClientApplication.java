@@ -1,5 +1,7 @@
 package cn.sanleny.configclient;
 
+import cn.sanleny.configclient.sample.EventConfiguration;
+import cn.sanleny.configclient.sample.MyApplicationEvent;
 import cn.sanleny.configclient.sample.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -8,6 +10,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +27,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConfigClientApplication {
 
     public static void main(String[] args) {
+        publishEvent();
         SpringApplication.run(ConfigClientApplication.class, args);
+    }
+
+    /**
+     * spring 内部事件
+     */
+    private static void publishEvent() {
+        //创建spring 基于注解驱动的应用上下文
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        //注册到sping上下文中
+        context.register(EventConfiguration.class);
+        //启动spring上下文
+        context.refresh();
+        ApplicationEventPublisher publisher = context;
+        //发布一个事件
+        publisher.publishEvent(new MyApplicationEvent("》》》》发布一个事件"));
     }
 
     @Value("${name}")
