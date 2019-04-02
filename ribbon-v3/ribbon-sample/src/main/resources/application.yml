@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ribbon-sample
+server:
+  port: 9001
+#eureka:
+#  client:
+#    ##禁止向eureka注册
+#    enabled: false
+##配合@LoadBalanced使用
+#client:
+#  ribbon:
+#    listOfServers: localhost:8002,localhost:8003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/

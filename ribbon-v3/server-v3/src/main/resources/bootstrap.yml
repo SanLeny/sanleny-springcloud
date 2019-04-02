@@ -1,0 +1,17 @@
+#spring:
+#  cloud:
+#    config:
+#      name: eurekaserver
+#      uri: http://localhost:5000/
+#  profiles:
+#    active: dev
+#
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#
+#server:
+#  port: 10001
