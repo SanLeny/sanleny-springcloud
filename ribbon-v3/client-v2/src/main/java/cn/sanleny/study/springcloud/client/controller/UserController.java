@@ -1,6 +1,8 @@
 package cn.sanleny.study.springcloud.client.controller;
 
 import cn.sanleny.study.springcloud.client.entity.Teacher;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,9 +31,15 @@ public class UserController {
         return "这是客户端v2返回的请求_"+id;
     }
 
+    @HystrixCommand(fallbackMethod = "callTimeoutFallback",
+            // 配置线程池
+            threadPoolProperties = { @HystrixProperty(name = "coreSize", value = "1"),
+                    @HystrixProperty(name = "queueSizeRejectionThreshold", value = "1") },
+            // 配置命令执行相关的，示例：超时时间
+            commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000") })
     @GetMapping("teacher")
     public Teacher teacher(){
-        int sleepTime = new Random().nextInt(3500);
+        int sleepTime = new Random().nextInt(3000);
         System.out.println("teacher:这是客户端v2返回的请求_"+",开始休眠:"+sleepTime);
         try {
             Thread.sleep(sleepTime);
@@ -39,6 +47,11 @@ public class UserController {
             e.printStackTrace();
         }
         return new Teacher("teacher",20,"12312","header");
+    }
+
+    public Teacher callTimeoutFallback(){
+        System.out.println("teacher:这是客户端v2:查询超时啦，我降级了>>>");
+        return new Teacher("teacher",20,"12312","teacher:这是客户端v2:查询超时啦，我降级了>>>");
     }
 
     @PostMapping("get-teather")

@@ -2,6 +2,8 @@ package cn.sanleny.study.springcloud.ribbon.sample.controller;
 
 import cn.sanleny.study.springcloud.ribbon.sample.command.CommandForIndex;
 import cn.sanleny.study.springcloud.ribbon.sample.entity.Teacher;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,13 +29,13 @@ public class ConsumerController {
         return new CommandForIndex(id,restTemplate).execute().toString();
     }
 
-//    @HystrixCommand(fallbackMethod = "callTimeoutFallback",
-//            // 配置线程池
-//            threadPoolProperties = { @HystrixProperty(name = "coreSize", value = "1"),
-//                    @HystrixProperty(name = "queueSizeRejectionThreshold", value = "1") },
-//            // 配置命令执行相关的，示例：超时时间
-//            commandProperties = {
-//                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3500") })
+    //此处配置也可以在客户端配置
+    @HystrixCommand(fallbackMethod = "callTimeoutFallback",
+            // 配置线程池
+            threadPoolProperties = { @HystrixProperty(name = "coreSize", value = "1"),
+                    @HystrixProperty(name = "queueSizeRejectionThreshold", value = "1") },
+            // 配置命令执行相关的，示例：超时时间
+            commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000") })
     @GetMapping("/teacher")
     public Object getTeacher(){
 //        return restTemplate.getForEntity("http://localhost:8002/teacher",Teacher.class);
@@ -41,6 +43,7 @@ public class ConsumerController {
     }
 
     public Object callTimeoutFallback(){
+        System.out.println("查询超时啦，我降级了>>>");
         return "查询超时啦，我降级了。";
     }
 

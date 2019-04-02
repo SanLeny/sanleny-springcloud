@@ -44,7 +44,7 @@ public class CommandForIndex extends HystrixCommand<Object> {
 
 
     protected String run() {
-        System.out.println("###command start #######" + Thread.currentThread().getName());
+        System.out.println("###command start #######" + Thread.currentThread().toString());
         String result =  template.getForObject("http://client/user?id="+id+"",String.class);
         System.out.println("###command end #######" + Thread.currentThread().getName() + ">>>>>>> 执行结果:" + result);
         return result;
