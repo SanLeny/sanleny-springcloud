@@ -1,5 +1,6 @@
 package cn.sanleny.study.springcloud.ribbon.sample.controller;
 
+import cn.sanleny.study.springcloud.ribbon.sample.command.CommandForIndex;
 import cn.sanleny.study.springcloud.ribbon.sample.entity.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +23,8 @@ public class ConsumerController {
     @GetMapping("/user")
     public String index(@RequestParam("id")String id){
 //        return restTemplate.getForObject("http://localhost:8002/user?id="+id+"",String.class);
-        return restTemplate.getForObject("http://client/user?id="+id+"",String.class);
-//        return new CommandForIndex(id,restTemplate).execute();
+//        return restTemplate.getForObject("http://client/user?id="+id+"",String.class);
+        return new CommandForIndex(id,restTemplate).execute().toString();
     }
 
 //    @HystrixCommand(fallbackMethod = "callTimeoutFallback",
@@ -50,7 +51,7 @@ public class ConsumerController {
         teacher.setName("sanleny");
         teacher.setPassWord("1234");
         teacher.setHeader("good");
-        return restTemplate.postForObject("http://localhost:8002/get-teather",teacher,String.class);
-//        return restTemplate.postForObject("http://spring-cloud-ribbon-provider/get-teather",teacher,String.class);
+//        return restTemplate.postForObject("http://localhost:8002/get-teather",teacher,String.class);
+        return restTemplate.postForObject("http://client/get-teather",teacher,String.class);
     }
 }

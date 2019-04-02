@@ -16,6 +16,7 @@
 //
 //    @Bean
 //    public IPing ribbonPing() {
+//        // 负载均衡规则，改为随机
 //        return new PingUrl();
 //    }
 //}

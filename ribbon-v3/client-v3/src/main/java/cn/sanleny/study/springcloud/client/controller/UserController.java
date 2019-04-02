@@ -17,6 +17,12 @@ public class UserController {
 
     @GetMapping("user")
     public String user(String id){
+        System.out.println("user:这是客户端v3:已经接到了客户端发来的请求:");
+//        try {
+//            Thread.sleep(3000L);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         System.out.println("user:这是客户端v3返回的请求_"+id);
         return "这是客户端v3返回的请求_"+id;
     }
