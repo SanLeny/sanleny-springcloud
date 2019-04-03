@@ -1,13 +1,14 @@
 package cn.sanleny.study.springcloud.client.controller;
 
 import cn.sanleny.study.springcloud.client.entity.Teacher;
+import cn.sanleny.study.springcloud.client.service.MovieService;
+import com.netflix.discovery.converters.Auto;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -18,6 +19,9 @@ import java.util.Random;
  */
 @RestController
 public class UserController {
+
+    @Autowired
+    private MovieService batchService;
 
     @GetMapping("user")
     public String user(String id){
@@ -58,5 +62,10 @@ public class UserController {
     public String postForTeacher(@RequestBody Object object){
         System.out.println("get-teather:这是客户端v2返回的请求_");
         return  object.toString();
+    }
+
+    @RequestMapping("/movie/query")
+    public Map<String, Object> queryMovie(String movieCode) throws Exception {
+        return batchService.queryMovie(movieCode);
     }
 }
