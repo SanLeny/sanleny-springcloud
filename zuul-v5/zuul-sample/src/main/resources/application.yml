@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: zuul-sample
+server:
+  port: 7001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+zuul:
+  host:
+    ##定义连接超时时间2秒
+    connect-timeout-millis: 2000
+    ##定义socket超时时间1秒
+    socket-timeout-millis: 1000
+    ##定义http连接池大小
+    max-total-connections: 200
+    ##定义每个host最大连接数
+    max-per-route-connections: 20
+  ##前缀
+#  prefix: /zuul
+  ##如果说一个内部调用的服务id，我们可以让网关直接忽略
+#  ignored-services: client
+  ribbon-isolation-strategy: SEMAPHORE
+  ##最大信号量
+  semaphore:
+    max-semaphores: 100
+  ####zuul转发##########################
+  routes:
+    route1:
+      #####拦截掉以/test1 开头的请求
+      path: /test1/**
+      #####转发，url地址转发
+      url: http://localhost:8002
+    route2:
+      #### 拦截掉以/test2 开头的请求
+      path: /test2/**
+      ### 通过eureka转发给相应的服务
+      serviceId: feign-sample

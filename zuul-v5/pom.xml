@@ -2,20 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sanleny-springcloud</artifactId>
+        <groupId>cn.sanleny</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.sanleny</groupId>
-    <artifactId>sanleny-springcloud</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>zuul-v5</artifactId>
+
     <modules>
-        <module>study-v1</module>
-        <module>config-v2</module>
-        <module>ribbon-v3</module>
-        <module>feign-v4</module>
-        <module>zuul-v5</module>
+        <module>zuul-sample</module>
     </modules>
-
-
 
 </project>
