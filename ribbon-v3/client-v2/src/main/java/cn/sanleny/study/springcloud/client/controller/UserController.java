@@ -2,7 +2,6 @@ package cn.sanleny.study.springcloud.client.controller;
 
 import cn.sanleny.study.springcloud.client.entity.Teacher;
 import cn.sanleny.study.springcloud.client.service.MovieService;
-import com.netflix.discovery.converters.Auto;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class UserController {
     @Autowired
     private MovieService batchService;
 
-    @GetMapping("user")
+    @RequestMapping("user")
     public String user(String id){
         System.out.println("user:这是客户端v2:已经接到了客户端发来的请求:");
         try {

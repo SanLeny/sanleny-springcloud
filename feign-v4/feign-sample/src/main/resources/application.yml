@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: feign-sample
+server:
+  port: 9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread :
+            timeoutInMilliseconds: 100
