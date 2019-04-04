@@ -67,4 +67,11 @@ public class UserController {
     public Map<String, Object> queryMovie(String movieCode) throws Exception {
         return batchService.queryMovie(movieCode);
     }
+
+    @RequestMapping("/order")
+    public String order(@RequestBody String orderNo){
+        System.out.println("这是客户端v2返回的请求_"+orderNo);
+        return "这是客户端v2返回的请求_"+orderNo;
+    }
+
 }

@@ -27,7 +27,7 @@ public interface ClientSmapleService {
     String getByTeacher(@RequestParam("id") String id);
 
     @Body("%7B\"orderNo\":\"{orderNo}\"%7D")
-    @PostMapping("/user")
+    @PostMapping("/order")
     String getByTeacher1(@Param("orderNo") String orderNo);
 
 }

@@ -1,10 +1,7 @@
 package cn.sanleny.study.springcloud.client.controller;
 
 import cn.sanleny.study.springcloud.client.entity.Teacher;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: sanleny
@@ -37,5 +34,11 @@ public class UserController {
     public String postForTeacher(@RequestBody Object object){
         System.out.println("get-teather:这是客户端v3返回的请求_");
         return  object.toString();
+    }
+
+    @RequestMapping("/order")
+    public String order(@RequestBody String orderNo){
+        System.out.println("这是客户端v3返回的请求_"+orderNo);
+        return "这是客户端v3返回的请求_"+orderNo;
     }
 }

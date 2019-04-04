@@ -1,11 +1,9 @@
 package cn.sanleny.feign.sample.controller;
 
 import cn.sanleny.feign.sample.service.ClientSmapleService;
-import feign.Body;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,9 +28,8 @@ public class FeignConsumerController {
         return  clientSmapleService.getByTeacher(id);
     }
 
-    @Body("%7B\"orderNo\":\"{orderNo}\"%7D")
-    @PostMapping("/user")
-    public String findTeacher1(@RequestBody String orderNo){
+    @PostMapping("/order")
+    public String findTeacher1(String orderNo){
         System.out.println(orderNo);
         return  clientSmapleService.getByTeacher1(orderNo);
     }
