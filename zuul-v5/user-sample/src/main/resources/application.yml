@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: user-sample
+server:
+  port: 9003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+token:
+  jwt:
+    key: nick123
+    iss: 11
+    expm: 10

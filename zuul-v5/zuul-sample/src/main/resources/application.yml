@@ -37,3 +37,39 @@ zuul:
       path: /test2/**
       ### 通过eureka转发给相应的服务
       serviceId: feign-sample
+      ## 指定了一个路由，Id为uaa-token，在做验权的时候需要用到
+    user-token:
+      # 指定这个路径会匹配到这个路由。
+      path: /token/byPhone
+      # 这里表示，这个路由的实例信息，是通过ribbon负载均衡器进行获取的。值就是对应服务名
+      serviceId: user-sample
+
+# 以下是自定义的配置，配置的值会被注入到MyConfigurationBean这个类
+my:
+  zuul:
+    token-filter:
+      noAuthenticationRoutes: user-token
+########hystrix相关配置
+# 注意项：
+# 1、zuul环境下，信号量模式下并发量的大小，zuul.semaphore.maxSemaphores这种配置方式优先级最高
+# 2、zuul环境下，资源隔离策略默认信号量，zuul.ribbonIsolationStrategy这种配置方式优先级最高
+# 3、zuul环境下，commandGroup 固定为RibbonCommand
+# 4、zuul环境下，commandKey 对应每个服务的serviceId
+#
+hystrix:
+  command:
+    # 这是默认的配置
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            # 命令执行超时时间
+            timeoutInMilliseconds: 2000
+#####以下是关于token的配置#######
+token:
+  jwt:
+    key: nick123
+    iss: 11
+    expm: 10

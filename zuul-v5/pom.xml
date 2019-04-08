@@ -13,6 +13,7 @@
 
     <modules>
         <module>zuul-sample</module>
+        <module>user-sample</module>
     </modules>
 
 </project>
