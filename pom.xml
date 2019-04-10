@@ -14,6 +14,7 @@
         <module>ribbon-v3</module>
         <module>feign-v4</module>
         <module>zuul-v5</module>
+        <module>gateway</module>
     </modules>
 
 

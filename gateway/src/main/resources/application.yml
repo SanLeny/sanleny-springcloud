@@ -1,0 +1,72 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+#      discovery:
+#        locator:
+#          # 是否可以通过其他服务的serviceId来转发到具体的服务实例。默认为false
+#          # 为true,自动创建路由,路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId/**，其中微服务应用名默认大写访问
+#          enabled: true
+      routes:
+      - id: test1
+        uri: http://localhost:8002
+        predicates:
+          - Path=/test1/**
+      # 路由到其他服务,url需要用[lb://]+[serviceId]
+      - id: test2
+        uri: lb://feign-sample
+        # 如果请求地址满足/test2/**,则转发到 feign-sample 服务
+        predicates:
+          - Path=/test2/**
+        filters:
+          - StripPrefix=1 # 去除请求地址中的 test2
+      - id: test3
+        uri: lb://feign-sample
+        predicates:
+          - Path=/test3/**
+          #This route matches the request has a cookie named chocolate who’s value matches the ch.p regular expression.
+          #该路由必须匹配 cookie  name=chocolate value=mycookie
+          - Cookie=chocolate, mycookie
+        filters:
+          - StripPrefix=1 # 去除请求地址中的 test2
+      - id: test4
+        uri: lb://feign-sample
+        predicates:
+          - Path=/test4/**
+        filters:
+          - StripPrefix=1 # 去除请求地址中的 test4
+          #在下游的请求头上会加上 "X-Request-Foo": "Bar"
+          - AddRequestHeader=X-Request-Foo, Bar
+      - id: test5
+        uri: lb://feign-sample
+        predicates:
+          - Path=/test5/**
+        filters:
+          # 重写路径
+          # For a request path of /foo/bar, this will set the path to /bar before making the downstream request.
+          # Notice the $\ which is replaced with $ because of the YAML spec.
+          - RewritePath=/test5/(?<segment>.*), /$\{segment}
+      - id: test6
+        uri: lb://feign-sample
+        predicates:
+          - Path=/test6/**
+        filters:
+          - StripPrefix=1 # 去除请求地址中的 test4
+#          - RequestTime=false
+#          - My
+#          - Pre
+#          - Post
+      - id: feign-sample
+        uri: lb://feign-sample
+        predicates:
+          - Path=/**
+#        filters:
+#          - Pre
+#          - Post
+server:
+  port: 7001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
