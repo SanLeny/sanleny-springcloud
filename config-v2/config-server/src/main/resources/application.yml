@@ -14,7 +14,7 @@ spring:
         git:
           ##定义去拉取配置的地址
 #          uri: F:\Project\configs
-          uri: https://github.com/SanLeny/sanleny-pringcloud-config.git
+          uri: https://github.com/SanLeny/sanleny-springcloud-config.git
           #定义为强制向git去拉取配置
           force-pull: true
         ##启用加密算法
