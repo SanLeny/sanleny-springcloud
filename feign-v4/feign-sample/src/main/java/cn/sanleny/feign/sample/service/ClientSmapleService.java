@@ -30,4 +30,6 @@ public interface ClientSmapleService {
     @PostMapping("/order")
     String getByTeacher1(@Param("orderNo") String orderNo);
 
+    @GetMapping("/testuser/getUser")
+    String getUser();
 }

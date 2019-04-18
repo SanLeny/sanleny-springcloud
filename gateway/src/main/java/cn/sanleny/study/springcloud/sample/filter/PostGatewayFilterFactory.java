@@ -25,6 +25,7 @@ public class PostGatewayFilterFactory extends AbstractGatewayFilterFactory<PostG
         // grab configuration from Config object
         return (exchange, chain) -> {
             return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+                exchange.getRequest().getHeaders().add("age","20");
                 ServerHttpResponse response = exchange.getResponse();
                 //Manipulate the response in some way
             }));

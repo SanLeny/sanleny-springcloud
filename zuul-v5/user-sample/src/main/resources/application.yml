@@ -1,6 +1,10 @@
 spring:
   application:
     name: user-sample
+  redis:
+    host: 10.114.130.216
+    port: 6379
+    database: 0
 server:
   port: 9003
 eureka:
@@ -12,3 +16,8 @@ token:
     key: nick123
     iss: 11
     expm: 10
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

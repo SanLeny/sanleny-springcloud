@@ -34,4 +34,9 @@ public class FeignConsumerController {
         return  clientSmapleService.getByTeacher1(orderNo);
     }
 
+    @GetMapping("/testuser/getUser")
+    public String getUser(){
+        return clientSmapleService.getUser();
+    }
+
 }

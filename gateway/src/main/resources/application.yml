@@ -57,13 +57,17 @@ spring:
 #          - My
 #          - Pre
 #          - Post
+      - id: testuser
+        uri: lb://feign-sample
+        predicates:
+          - Path=/testuser/**
       - id: feign-sample
         uri: lb://feign-sample
         predicates:
           - Path=/**
-#        filters:
+        filters:
 #          - Pre
-#          - Post
+          - Post
 server:
   port: 7001
 eureka:

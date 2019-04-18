@@ -9,6 +9,8 @@ import org.springframework.web.cors.reactive.CorsUtils;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+
 /**
  * @Author: sanleny
  * @Date: 2019-04-10
@@ -22,6 +24,7 @@ public class MyFilter implements GatewayFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
 //        if(CorsUtils.isCorsRequest(request)){
+            System.out.println(">>>>>>"+request.getHeaders().toSingleValueMap());
             System.out.println(">>>== "+request.getQueryParams());
             System.out.println(">>>== "+request.getId());
             System.out.println(">>>== "+request.getCookies());

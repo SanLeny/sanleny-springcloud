@@ -51,6 +51,7 @@ public class MyConfiguration {
         return builder.routes().route(r ->
                         r.path("/user/**")
                         .filters(f -> f.filter(new MyFilter())
+                        .addRequestHeader("name","sanleny")
                         .addResponseHeader("X-Response-Default-Foo", "Default-Bar"))
                         .uri("lb://feign-sample")
 //                        .filters(new MyFilter())

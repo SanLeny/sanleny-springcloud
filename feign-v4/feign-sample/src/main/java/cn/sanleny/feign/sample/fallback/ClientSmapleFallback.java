@@ -27,4 +27,9 @@ public class ClientSmapleFallback implements ClientSmapleService {
     public String getByTeacher1(String orderNo) {
         return "降级了1_"+orderNo;
     }
+
+    @Override
+    public String getUser() {
+        return "降级了_";
+    }
 }

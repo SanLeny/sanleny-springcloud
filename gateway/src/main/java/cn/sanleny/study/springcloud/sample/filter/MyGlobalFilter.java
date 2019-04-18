@@ -19,8 +19,9 @@ import reactor.core.publisher.Mono;
 public class MyGlobalFilter implements GlobalFilter, Ordered {
 
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        String token = exchange.getRequest().getQueryParams().getFirst("token");
-
+        String token = exchange.getRequest().getHeaders().getFirst("token");
+//        String token = exchange.getRequest().getQueryParams().getFirst("token");
+        System.out.println(token);
         if (token == null || token.isEmpty()) {
             System.out.println( "token is empty..." );
 //            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
