@@ -37,6 +37,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Set<String> permissions = new HashSet<>();
         permissions.add("list:list:list");
         permissions.add("edit:edit:edit");
+        /**
+         * 1. 放入角色时需要加前缀ROLE_，而在controller使用时不需要加ROLE_前缀
+         * 2. 放入的是权限时，不能加ROLE_前缀，hasAuthority与放入的权限名称对应即可
+         * @see org.springframework.security.access.expression.SecurityExpressionRoot#hasAnyRole
+         */
+        permissions.add("ROLE_USER");//设置权限和角色
         List<GrantedAuthority> grantedAuthorities = permissions.stream().map(GrantedAuthorityImpl::new).collect(Collectors.toList());
         return new JwtUserDetails(user.getName(), user.getPassword(), user.getSalt(), grantedAuthorities);
     }

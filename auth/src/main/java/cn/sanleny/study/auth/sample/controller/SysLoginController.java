@@ -57,6 +57,18 @@ public class SysLoginController {
         return "btest";
     }
 
+    @PreAuthorize("hasAnyRole('admin')")
+    @GetMapping("/ctest")
+    public String ctest(){
+        return "ctest";
+    }
+
+    @PreAuthorize("hasAnyRole('USER')")
+    @GetMapping("/dtest")
+    public String dtest(){
+        return "dtest";
+    }
+
 
 
 }
