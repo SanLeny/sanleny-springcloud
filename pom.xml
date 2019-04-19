@@ -15,6 +15,7 @@
         <module>feign-v4</module>
         <module>zuul-v5</module>
         <module>gateway</module>
+        <module>auth</module>
     </modules>
 
 
