@@ -16,6 +16,7 @@
         <module>zuul-v5</module>
         <module>gateway</module>
         <module>auth</module>
+        <module>auth-v2</module>
     </modules>
 
 

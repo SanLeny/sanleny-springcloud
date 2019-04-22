@@ -1,0 +1,18 @@
+spring:
+  redis:
+    host: sanleny70.com
+    port: 6379
+    database: 0
+  application:
+    name: auth-v2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+server:
+  port: 9080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
