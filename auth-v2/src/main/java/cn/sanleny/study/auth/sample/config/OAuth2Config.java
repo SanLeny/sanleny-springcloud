@@ -5,7 +5,6 @@ import cn.sanleny.study.auth.sample.security.CustomTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -35,8 +34,8 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private RedisConnectionFactory redisConnectionFactory;
+//    @Autowired
+//    private RedisConnectionFactory redisConnectionFactory;
 //    @Autowired
 //    private WebResponseExceptionTranslator webResponseExceptionTranslator;
 
@@ -91,11 +90,11 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         return new JwtTokenStore(jwtTokenConverter());
     }
 
-    @Bean
-    public TokenStore redisTokenStore() {
-        RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
-        return tokenStore;
-    }
+//    @Bean
+//    public TokenStore redisTokenStore() {
+//        RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
+//        return tokenStore;
+//    }
 
 
     @Bean
