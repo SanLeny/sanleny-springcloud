@@ -15,6 +15,9 @@ spring:
           ##定义去拉取配置的地址
 #          uri: F:\Project\configs
           uri: https://github.com/SanLeny/sanleny-springcloud-config.git
+#          uri: http://gitlab.sanleny.com/web/sanleny-springcloud-config.git
+#          username: 308644773
+#          password: a123!@#A
           #定义为强制向git去拉取配置
           force-pull: true
         ##启用加密算法

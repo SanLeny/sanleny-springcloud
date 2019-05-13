@@ -22,6 +22,6 @@ spring:
 eureka:
   client:
     service-url:
-      #      defaultZone: http://localhost:10001/eureka/
+        defaultZone: http://localhost:10001/eureka/
       #配置中心和注册中心结合使用 此时需要写到自己这里
-      defaultZone: http://127.0.0.1:10001/eureka/
+#      defaultZone: http://127.0.0.1:10001/eureka/

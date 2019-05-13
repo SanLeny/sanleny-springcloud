@@ -14,5 +14,4 @@ management:
   endpoints:
     web:
       exposure:
-        #让客户端支持env和refresh方式
-        include: env,refresh
+        include: "*"
