@@ -8,9 +8,9 @@ server:
 #    ##禁止向eureka注册
 #    enabled: false
 ##配合@LoadBalanced使用
-#client:
-#  ribbon:
-#    listOfServers: localhost:8002,localhost:8003
+client:
+  ribbon:
+    listOfServers: localhost:8002,localhost:8003
 eureka:
   client:
     service-url:

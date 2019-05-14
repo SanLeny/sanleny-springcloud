@@ -1,10 +1,12 @@
 package cn.sanleny.study.springcloud.ribbon.sample;
 
+import cn.sanleny.study.springcloud.ribbon.sample.configuration.CustomConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @EnableCircuitBreaker//客户端的服务断路器
 //@EnableEurekaClient
-//@RibbonClient(name = "client", configuration = CustomConfiguration.class) //自定义 RibbonClient configuration
+@RibbonClient(name = "client", configuration = CustomConfiguration.class) //自定义 RibbonClient configuration
 public class RibbonSampleApplication {
 
     public static void main(String[] args) {
