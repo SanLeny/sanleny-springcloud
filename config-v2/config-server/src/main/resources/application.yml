@@ -7,7 +7,7 @@ spring:
 #    stream:
 #      kafka:
 #        binder:
-#          #Kafka的服务端列表
+#          #Kafka的服务端代理列表
 #          brokers: sanleny70.com:9092,sanleny71.com:9092,sanleny72.com:9092
     config:
       server:
