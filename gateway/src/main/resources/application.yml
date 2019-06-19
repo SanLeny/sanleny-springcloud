@@ -1,4 +1,11 @@
 spring:
+  zipkin:
+    base-url: http://localhost:7004  #所有的数据提交到此服务之中
+    sender:
+      type: web   #提交的类型是web 服务
+  sleuth:
+    sampler:
+      probability: 1.0 #定义抽样比率，默认为0.1
   application:
     name: gateway
   cloud:
