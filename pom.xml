@@ -20,6 +20,14 @@
         <module>monitor-v6</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+    </dependencies>
+
 
 
 </project>

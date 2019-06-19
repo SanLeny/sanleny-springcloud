@@ -9,7 +9,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:10001/eureka/
-#    register-with-eureka: false
+    register-with-eureka: false
   instance:
     hostname: ${spring.application.name}
     prefer-ip-address: true
