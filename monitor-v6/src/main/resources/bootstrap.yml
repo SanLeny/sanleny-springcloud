@@ -1,0 +1,30 @@
+server:
+  port: 7003
+
+spring:
+  application:
+    name: monitor
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+#    register-with-eureka: false
+  instance:
+    hostname: ${spring.application.name}
+    prefer-ip-address: true
+#
+#logging:
+turbine:
+  aggregator:
+    cluster-config: default
+  #配置Eureka中的serviceId列表，表明监控哪些服务
+  app-config: feign-sample
+  #设置监控的表达式，通过此表达式表示要获取监控信息名称
+  cluster-name-expression: "'default'"
+#  cluster-name-expression: new String("default")
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -26,3 +26,8 @@ eureka:
     enable-self-preservation: false
     ###eureka多长时间更新一次数据
     peer-eureka-nodes-update-interval-ms: 100000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
