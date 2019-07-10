@@ -4,6 +4,7 @@ import cn.sanleny.study.springcloud.client.entity.Teacher;
 import cn.sanleny.study.springcloud.client.service.MovieService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.Random;
  * @Version: 1.0
  */
 @RestController
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -24,13 +26,13 @@ public class UserController {
 
     @RequestMapping("user")
     public String user(String id){
-        System.out.println("user:这是客户端v2:已经接到了客户端发来的请求:");
+        log.info("user:这是客户端v2:已经接到了客户端发来的请求:");
         try {
             Thread.sleep(3000L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("user:这是客户端v2返回的请求_"+id);
+        log.info("user:这是客户端v2返回的请求_"+id);
         return "这是客户端v2返回的请求_"+id;
     }
 
@@ -43,7 +45,7 @@ public class UserController {
     @GetMapping("teacher")
     public Teacher teacher(){
         int sleepTime = new Random().nextInt(3000);
-        System.out.println("teacher:这是客户端v2返回的请求_"+",开始休眠:"+sleepTime);
+        log.info("teacher:这是客户端v2返回的请求_"+",开始休眠:"+sleepTime);
         try {
             Thread.sleep(sleepTime);
         } catch (InterruptedException e) {
@@ -53,13 +55,13 @@ public class UserController {
     }
 
     public Teacher callTimeoutFallback(){
-        System.out.println("teacher:这是客户端v2:查询超时啦，我降级了>>>");
+        log.info("teacher:这是客户端v2:查询超时啦，我降级了>>>");
         return new Teacher("teacher",20,"12312","teacher:这是客户端v2:查询超时啦，我降级了>>>");
     }
 
     @PostMapping("get-teather")
     public String postForTeacher(@RequestBody Object object){
-        System.out.println("get-teather:这是客户端v2返回的请求_");
+        log.info("get-teather:这是客户端v2返回的请求_");
         return  object.toString();
     }
 
@@ -70,7 +72,7 @@ public class UserController {
 
     @RequestMapping("/order")
     public String order(@RequestBody String orderNo){
-        System.out.println("这是客户端v2返回的请求_"+orderNo);
+        log.info("这是客户端v2返回的请求_"+orderNo);
         return "这是客户端v2返回的请求_"+orderNo;
     }
 

@@ -24,3 +24,5 @@ server-v1 eureka 服务端，并且配置了HA 高可用
 ## monitor-v6   监控模块
 
 ## zipkin-v7   链路追踪
+【databases】 先在数据库里面创建zipkin的表
+https://github.com/openzipkin/zipkin/blob/master/zipkin-storage/mysql-v1/src/main/resources/mysql.sql

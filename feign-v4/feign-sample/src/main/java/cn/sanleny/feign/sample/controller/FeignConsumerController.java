@@ -1,6 +1,7 @@
 package cn.sanleny.feign.sample.controller;
 
 import cn.sanleny.feign.sample.service.ClientSmapleService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version: 1.0
  */
 @RestController
+@Slf4j
 public class FeignConsumerController {
 
     @Autowired
@@ -20,6 +22,7 @@ public class FeignConsumerController {
 
     @GetMapping("/teacher")
     public Object getTeacher(){
+        log.info(">>>>>>访问 feign  /teacher");
         return  clientSmapleService.getTeacher();
     }
 
