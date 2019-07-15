@@ -19,6 +19,7 @@
         <module>auth-v2</module>
         <module>monitor-v6</module>
         <module>zipkin-v7</module>
+        <module>admin-server</module>
     </modules>
 
     <properties>
