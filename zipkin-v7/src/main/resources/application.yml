@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: zipkin-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
 management:
   metrics:
     web:
@@ -14,3 +18,22 @@ management:
         include: "*"
 logging:
   config: classpath:logback-spring.xml
+zipkin:
+  collector:
+    sample-rate: 1.0
+    http:
+      enabled: false
+    rabbitmq:
+      addresses: localhost:5672
+      password: guest
+      username: guest
+      queue: zipkin
+      virtual-host: /
+  storage:
+    type: mysql
+    mysql:
+      host: localhost
+      port: 3306
+      username: root
+      password: Sin1/2=30
+      db: zipkin
