@@ -29,11 +29,21 @@ zipkin:
       username: guest
       queue: zipkin
       virtual-host: /
+#  storage:
+#    type: mysql
+#    mysql:
+#      host: localhost
+#      port: 3306
+#      username: root
+#      password: Sin1/2=30
+#      db: zipkin
   storage:
-    type: mysql
-    mysql:
-      host: localhost
-      port: 3306
-      username: root
-      password: Sin1/2=30
-      db: zipkin
+    type: elasticsearch
+    StorageComponent: elasticsearch
+    elasticsearch:
+      cluster: elasticsearch
+      max-requests: 30
+      index: zipkin
+      index-shards: 3
+      index-replicas: 1
+      hosts: localhost:9200
