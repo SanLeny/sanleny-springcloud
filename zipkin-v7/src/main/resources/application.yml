@@ -18,17 +18,26 @@ management:
         include: "*"
 logging:
   config: classpath:logback-spring.xml
-zipkin:
-  collector:
-    sample-rate: 1.0
-    http:
-      enabled: false
-    rabbitmq:
-      addresses: localhost:5672
-      password: guest
-      username: guest
-      queue: zipkin
-      virtual-host: /
+#zipkin:
+#  collector:
+#    sample-rate: 1.0
+#    http:
+#      enabled: false
+#    rabbitmq:
+#      addresses: localhost:5672
+#      password: guest
+#      username: guest
+#      queue: zipkin
+#      virtual-host: /
+#    kafka:
+#      # Kafka bootstrap broker list, comma-separated host:port values. Setting this activates the
+#      bootstrap-servers: sanleny70.com:9092,sanleny71.com:9092,sanleny72.com:9092
+#      # Name of topic to poll for spans
+#      topic: zipkin
+#      # Consumer group this process is consuming on behalf of.
+#      group-id: zipkin
+#      # Count of consumer threads consuming the topic
+#      streams: 1
 #  storage:
 #    type: mysql
 #    mysql:
@@ -37,13 +46,13 @@ zipkin:
 #      username: root
 #      password: Sin1/2=30
 #      db: zipkin
-  storage:
-    type: elasticsearch
-    StorageComponent: elasticsearch
-    elasticsearch:
-      cluster: elasticsearch
-      max-requests: 30
-      index: zipkin
-      index-shards: 3
-      index-replicas: 1
-      hosts: localhost:9200
+#  storage:
+#    type: elasticsearch
+#    StorageComponent: elasticsearch
+#    elasticsearch:
+#      cluster: elasticsearch
+#      max-requests: 30
+#      index: zipkin
+#      index-shards: 3
+#      index-replicas: 1
+#      hosts: localhost:9200

@@ -2,7 +2,7 @@ spring:
   zipkin:
     base-url: http://zipkin-server/  #所有的数据提交到此服务之中
     sender:
-      type: rabbit   #提交的类型是web 服务
+      type: web   #提交的类型是web 服务
   sleuth:
     sampler:
       probability: 1.0 #定义抽样比率，默认为0.1
