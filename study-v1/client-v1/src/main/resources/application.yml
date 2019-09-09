@@ -7,3 +7,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:10001/eureka/
+  instance:
+    #该实例注册到服务中心的唯一ID
+    instance-id: ${spring.application.name}
+    #该实例，相较于hostname是否优先使用IP
+    prefer-ip-address: true
