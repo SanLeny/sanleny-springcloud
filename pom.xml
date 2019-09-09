@@ -20,6 +20,7 @@
         <module>monitor-v6</module>
         <module>zipkin-v7</module>
         <module>admin-server</module>
+        <module>zookeeper-v8</module>
     </modules>
 
     <properties>
@@ -31,7 +32,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
-        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
     </properties>
 
     <dependencyManagement>
