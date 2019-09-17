@@ -22,6 +22,7 @@ eureka:
   server:
     ### 当eureka启动时，不能从集群节点中获取到instance注册信息，应该等多久
     wait-time-in-ms-when-sync-empty: 0
-    enable-self-preservation: true
+    #关闭自我保护，将出现故障的服务快速剔除
+    enable-self-preservation: false
     ###eureka多长时间更新一次数据
     peer-eureka-nodes-update-interval-ms: 100000

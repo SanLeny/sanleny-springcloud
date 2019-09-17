@@ -1,3 +1,3 @@
 spring:
   profiles:
-    active: dev3
+    active: dev2
