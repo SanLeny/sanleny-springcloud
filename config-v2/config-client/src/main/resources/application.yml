@@ -1,12 +1,9 @@
 server:
   port: 8002
 spring:
-#  cloud:
-#    stream:
-#      kafka:
-#        binder:
-#          #Kafka的服务端列表
-#          brokers: sanleny70.com:9092,sanleny71.com:9092,sanleny72.com:9092
+#  kafka:
+#    #Kafka的服务端代理列表
+#    bootstrap-servers: sanleny70.com:9092,sanleny71.com:9092,sanleny72.com:9092
   application:
     name: config-client
 #定义开启端口

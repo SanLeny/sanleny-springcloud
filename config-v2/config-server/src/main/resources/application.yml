@@ -1,14 +1,12 @@
 server:
   port: 5000
 spring:
+#  kafka:
+#    #Kafka的服务端代理列表
+#    bootstrap-servers: sanleny70.com:9092,sanleny71.com:9092,sanleny72.com:9092
   application:
     name: config-server
   cloud:
-#    stream:
-#      kafka:
-#        binder:
-#          #Kafka的服务端代理列表
-#          brokers: sanleny70.com:9092,sanleny71.com:9092,sanleny72.com:9092
     config:
       server:
         git:
