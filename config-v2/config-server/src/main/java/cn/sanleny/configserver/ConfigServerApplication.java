@@ -1,12 +1,9 @@
 package cn.sanleny.configserver;
 
-import cn.hutool.http.Header;
-import cn.hutool.http.HttpRequest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -27,11 +24,11 @@ public class ConfigServerApplication {
      * 自定义刷新
      * @throws Exception
      */
-    @RequestMapping("/refresh")
-    public void refresh() throws Exception {
-        String url="http://localhost:5000/actuator/bus-refresh";
-        String body = HttpRequest.post(url).header(Header.CONTENT_TYPE, "application/json;charset=UTF-8").execute().body();
-        System.out.println("==========refresh===="+body);
-    }
+//    @RequestMapping("/refresh")
+//    public void refresh() throws Exception {
+//        String url="http://localhost:5000/actuator/bus-refresh";
+//        String body = HttpRequest.post(url).header(Header.CONTENT_TYPE, "application/json;charset=UTF-8").execute().body();
+//        System.out.println("==========refresh===="+body);
+//    }
 
 }
