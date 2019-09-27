@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: client
+  profiles:
+    active: dev1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
