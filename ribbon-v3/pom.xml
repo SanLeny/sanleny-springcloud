@@ -17,6 +17,7 @@
         <module>server-v3</module>
         <module>client-v3</module>
         <module>client-v2</module>
+        <module>ribbon-client</module>
     </modules>
 
 
