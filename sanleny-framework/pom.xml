@@ -5,19 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.sanleny</groupId>
-    <artifactId>sanleny-springcloud</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>sanleny-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
     <modules>
-        <module>study-demo</module>
-        <module>sanleny-cloud-parent</module>
-        <module>sanleny-eureka</module>
-        <module>sanleny-config</module>
-        <module>sanleny-auth</module>
-        <module>sanleny-gateway</module>
-        <module>sanleny-framework</module>
-        <module>demo</module>
+        <module>sanleny-framework-core</module>
+        <module>sanleny-framework-auth-spring-boot-starter</module>
+        <module>sanleny-framework-service-spring-boot-starter</module>
+        <module>sanleny-framework-auth-common</module>
     </modules>
 
 </project>

@@ -1,0 +1,49 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_null
+    time-zone: GMT+8
+  messages:
+    basename: i18n/messages
+  redis:
+    database: 1
+    host: 192.168.1.10
+    port: 6379
+## mybatis setting
+mybatis-plus:
+  ## 配置 mapper 扫描路径
+  mapper-locations: classpath*:mapper/*.xml,classpath*:mapper/**/*.xml
+  configuration:
+    ## true 当查询数据为空时字段返回为null，否则字段将被隐藏
+    call-setters-on-nulls: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+feign:
+  # 启用容错保护、断路器
+  hystrix:
+    enabled: true
+  # 请求和响应GZIP压缩支持
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread :
+            #超时时间，默认1000毫秒
+            timeoutInMilliseconds: 60000
+  threadpool:
+    default:
+      ##线程池大小
+      coreSize: 200
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

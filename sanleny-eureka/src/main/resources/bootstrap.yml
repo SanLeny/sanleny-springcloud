@@ -1,0 +1,41 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: ${project.artifactId}
+  profiles:
+    active: @activatedProperties@
+eureka:
+  instance:
+    # 实例主机名称
+#    instance-id: ${spring.application.name}
+#    hostname: ${spring.application.name}
+    # 该实例，相较于hostname是否优先使用IP
+    prefer-ip-address: true
+  # 服务端设置
+  server:
+    #关闭自我保护，将出现故障的服务快速剔除
+    enable-self-preservation: false
+    #清理无效节点的时间间隔，默认(60 * 1000)ms
+    eviction-interval-timer-in-ms: 10000
+    #当eureka启动时，不能从集群节点中获取到instance注册信息，应该等多久(默认 5*60*1000 ms <5分钟>)
+    wait-time-in-ms-when-sync-empty: 10000
+    #eureka 节点间间隔多长时间更新一次数据，默认(10*60*1000 <10分钟>)ms
+    peer-eureka-nodes-update-interval-ms: 10000
+  # 客户端设置
+  client:
+    # 实例是否在eureka服务器上注册自己的信息以供其他服务发现（注册中心集群时开启）
+    register-with-eureka: false
+    # 此客户端是否获取eureka服务器注册表上的注册信息，即检索服务,默认为true
+    fetch-registry: false
+    # 注册中心地址（集群时指定另外一个注册中心地址）
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  ## 日志配置
+  config: classpath:logback-spring.xml
