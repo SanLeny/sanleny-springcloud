@@ -22,7 +22,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Spring -->
-        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
 
         <!-- mybatis-plus -->
@@ -31,7 +31,7 @@
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
 
         <!-- tool -->
-        <hutool.version>5.4.3</hutool.version>
+        <hutool.version>5.4.7</hutool.version>
 
 
     </properties>
