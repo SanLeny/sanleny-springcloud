@@ -1,4 +1,4 @@
-package cn.sanleny.framework.service.boot.autoconfigure;
+package cn.sanleny.framework.service.autoconfigure;
 
 import cn.sanleny.framework.service.interceptor.I18nInterceptor;
 import org.springframework.context.annotation.Configuration;

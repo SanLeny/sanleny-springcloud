@@ -3,7 +3,7 @@ package cn.sanleny.demo.controller;
 import cn.sanleny.demo.entity.User;
 import cn.sanleny.demo.service.UserService;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import cn.sanleny.frameword.core.boot.autoconfigure.LangUtil;
+import cn.sanleny.frameword.core.autoconfigure.LangUtil;
 import cn.sanleny.frameword.core.common.util.ResultData;
 import cn.sanleny.framework.service.util.PageVo;
 import lombok.extern.slf4j.Slf4j;

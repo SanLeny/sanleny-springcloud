@@ -1,7 +1,7 @@
 package cn.sanleny.gateway.filter;
 
 import cn.hutool.core.util.StrUtil;
-import cn.sanleny.frameword.core.boot.autoconfigure.PermitAllUrlProperties;
+import cn.sanleny.frameword.core.autoconfigure.PermitAllUrlProperties;
 import cn.sanleny.frameword.core.common.constant.CommonConstants;
 import cn.sanleny.frameword.core.common.exception.GlobalFallbackException;
 import cn.sanleny.frameword.core.common.util.ResultData;

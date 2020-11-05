@@ -1,4 +1,4 @@
-package cn.sanleny.frameword.core.boot.autoconfigure;
+package cn.sanleny.frameword.core.autoconfigure;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

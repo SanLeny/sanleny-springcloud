@@ -1,4 +1,4 @@
-package cn.sanleny.framework.service.boot.autoconfigure;
+package cn.sanleny.framework.service.autoconfigure;
 
 import com.netflix.hystrix.HystrixThreadPoolKey;
 import com.netflix.hystrix.HystrixThreadPoolProperties;

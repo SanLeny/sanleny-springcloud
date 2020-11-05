@@ -1,4 +1,4 @@
-package cn.sanleny.framework.service.boot.autoconfigure;
+package cn.sanleny.framework.service.autoconfigure;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.autoconfigure.ConfigurationCustomizer;

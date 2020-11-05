@@ -1,4 +1,4 @@
-package cn.sanleny.frameword.core.boot.autoconfigure;
+package cn.sanleny.frameword.core.autoconfigure;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Configuration;

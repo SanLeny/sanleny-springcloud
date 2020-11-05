@@ -1,7 +1,7 @@
 package cn.sanleny.auth.config;
 
 import cn.sanleny.auth.security.CustomAuthenticationProvider;
-import cn.sanleny.frameword.core.boot.autoconfigure.PermitAllUrlProperties;
+import cn.sanleny.frameword.core.autoconfigure.PermitAllUrlProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

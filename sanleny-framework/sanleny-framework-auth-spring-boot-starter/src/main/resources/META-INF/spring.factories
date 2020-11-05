@@ -1,4 +1,4 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.sanleny.framework.auth.boot.autoconfigure.AuthProperties,\
-cn.sanleny.framework.auth.boot.autoconfigure.ResourceServerConfig
+cn.sanleny.framework.auth.autoconfigure.AuthProperties,\
+cn.sanleny.framework.auth.autoconfigure.ResourceServerConfig

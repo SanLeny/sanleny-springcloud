@@ -1,6 +1,6 @@
-package cn.sanleny.framework.auth.boot.autoconfigure;
+package cn.sanleny.framework.auth.autoconfigure;
 
-import cn.sanleny.frameword.core.boot.autoconfigure.PermitAllUrlProperties;
+import cn.sanleny.frameword.core.autoconfigure.PermitAllUrlProperties;
 import cn.sanleny.framework.auth.exception.CustomAccessDeniedHandler;
 import cn.sanleny.framework.auth.exception.AuthExceptionEntryPoint;
 import lombok.RequiredArgsConstructor;

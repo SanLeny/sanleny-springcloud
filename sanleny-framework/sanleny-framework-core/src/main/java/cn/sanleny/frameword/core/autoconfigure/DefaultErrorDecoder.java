@@ -1,4 +1,4 @@
-package cn.sanleny.frameword.core.boot.autoconfigure;
+package cn.sanleny.frameword.core.autoconfigure;
 
 import cn.sanleny.frameword.core.common.exception.GlobalFallbackException;
 import feign.FeignException;

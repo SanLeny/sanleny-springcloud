@@ -1,7 +1,7 @@
 package cn.sanleny.auth.security;
 
 import cn.hutool.core.util.StrUtil;
-import cn.sanleny.framework.auth.boot.autoconfigure.AuthProperties;
+import cn.sanleny.framework.auth.autoconfigure.AuthProperties;
 import cn.sanleny.framework.auth.common.constant.SecurityConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package cn.sanleny.demo;
 
-import cn.sanleny.framework.service.boot.autoconfigure.FeignConfiguration;
+import cn.sanleny.framework.service.autoconfigure.FeignConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

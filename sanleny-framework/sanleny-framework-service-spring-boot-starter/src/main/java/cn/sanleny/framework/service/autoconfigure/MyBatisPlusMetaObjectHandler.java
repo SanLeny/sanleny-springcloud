@@ -1,4 +1,4 @@
-package cn.sanleny.framework.service.boot.autoconfigure;
+package cn.sanleny.framework.service.autoconfigure;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import cn.sanleny.framework.auth.common.util.SecurityUtils;

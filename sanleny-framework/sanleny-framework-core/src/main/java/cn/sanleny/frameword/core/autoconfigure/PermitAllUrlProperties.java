@@ -1,4 +1,4 @@
-package cn.sanleny.frameword.core.boot.autoconfigure;
+package cn.sanleny.frameword.core.autoconfigure;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

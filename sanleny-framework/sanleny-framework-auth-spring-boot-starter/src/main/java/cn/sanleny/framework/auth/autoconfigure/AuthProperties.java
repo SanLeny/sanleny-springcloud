@@ -1,4 +1,4 @@
-package cn.sanleny.framework.auth.boot.autoconfigure;
+package cn.sanleny.framework.auth.autoconfigure;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

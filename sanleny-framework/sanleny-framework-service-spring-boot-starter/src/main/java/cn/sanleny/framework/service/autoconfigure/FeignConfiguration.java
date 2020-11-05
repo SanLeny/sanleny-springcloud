@@ -1,4 +1,4 @@
-package cn.sanleny.framework.service.boot.autoconfigure;
+package cn.sanleny.framework.service.autoconfigure;
 
 import cn.sanleny.frameword.core.common.constant.CommonConstants;
 import feign.RequestInterceptor;
