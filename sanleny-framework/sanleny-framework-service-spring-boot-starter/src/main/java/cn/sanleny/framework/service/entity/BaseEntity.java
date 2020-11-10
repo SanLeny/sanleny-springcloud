@@ -26,4 +26,10 @@ public class BaseEntity<T> extends SuperEntity<T> {
     @TableField(value = "update_user", fill = FieldFill.INSERT_UPDATE)
     protected String updateUser; //最后修改人
 
+    /**
+     * 权限过滤
+     */
+    @TableField(exist = false)
+    protected boolean dataScopeStatus = false;
+
 }

@@ -1,6 +1,7 @@
 package cn.sanleny.framework.service.autoconfigure;
 
 import cn.sanleny.framework.auth.common.util.SecurityUtils;
+import cn.sanleny.framework.service.interceptor.DataScopeInnerInterceptor;
 import com.baomidou.mybatisplus.autoconfigure.ConfigurationCustomizer;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.handler.TenantLineHandler;
@@ -74,6 +75,12 @@ public class MybatisPlusAutoConfiguration {
             case SCHEMA:
             case DATASOURCE:
                 break;
+        }
+
+        //数据权限范围过滤
+        if(databaseProperties.getIsDataScope()){
+            DataScopeInnerInterceptor dataScopeInnerInterceptor = new DataScopeInnerInterceptor();
+            interceptor.addInnerInterceptor(dataScopeInnerInterceptor);
         }
 
         //分页插件
