@@ -32,4 +32,19 @@ public interface SecurityConstants {
      */
     String GRANT_TYPE_REFRESH_TOKEN = "refresh_token";
 
+    /**
+     * 用户ID字段
+     */
+    String TOKEN_USER_ID = "userId";
+
+    /**
+     * 用户名字段
+     */
+    String TOKEN_USERNAME = "username";
+
+    /**
+     * 租户ID字段
+     */
+    String TOKEN_TENANT_ID = "tenantId";
+
 }

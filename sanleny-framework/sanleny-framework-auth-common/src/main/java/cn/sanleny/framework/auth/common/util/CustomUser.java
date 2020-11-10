@@ -18,7 +18,7 @@ public class CustomUser implements UserDetails {
     private static final long serialVersionUID = 1L;
 
     private String id;
-
+    private String tenantId;//租户id
     private String username;
     private String password;
     private boolean enabled = true; //账号是否可用
@@ -48,8 +48,9 @@ public class CustomUser implements UserDetails {
      * @throws IllegalArgumentException if a <code>null</code> value was passed either as
      * a parameter or as an element in the <code>GrantedAuthority</code> collection
      */
-    public CustomUser(String id, String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
+    public CustomUser(String id,String tenantId, String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
+        this.tenantId = tenantId;
         this.username = username;
         this.password = password;
         this.enabled = enabled;

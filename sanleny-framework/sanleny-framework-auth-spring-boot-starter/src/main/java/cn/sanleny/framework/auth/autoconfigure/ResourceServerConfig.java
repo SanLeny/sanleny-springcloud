@@ -1,6 +1,7 @@
 package cn.sanleny.framework.auth.autoconfigure;
 
 import cn.sanleny.frameword.core.autoconfigure.PermitAllUrlProperties;
+import cn.sanleny.framework.auth.common.security.FastjsonRedisTokenStoreSerializationStrategy;
 import cn.sanleny.framework.auth.exception.CustomAccessDeniedHandler;
 import cn.sanleny.framework.auth.exception.AuthExceptionEntryPoint;
 import lombok.RequiredArgsConstructor;
@@ -55,6 +56,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Bean
     public TokenStore tokenStore(){
         RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
+        tokenStore.setSerializationStrategy(new FastjsonRedisTokenStoreSerializationStrategy());
         tokenStore.setPrefix(authProperties.getTokenPrefix());
         return tokenStore;
     }

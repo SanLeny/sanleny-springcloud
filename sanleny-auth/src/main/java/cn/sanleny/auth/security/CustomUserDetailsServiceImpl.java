@@ -32,6 +32,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //这里验证用户信息
         String id = "1";
+        String tenantId = "1";
         String password = "123456";
         password = "{bcrypt}" + new BCryptPasswordEncoder().encode(password);
 
@@ -46,6 +47,6 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
          * @see org.springframework.security.access.expression.SecurityExpressionRoot#hasAnyRole
          */
         List<GrantedAuthority> grantedAuthorities = permissions.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-        return new CustomUser(id,username,password,true,true,true,true,grantedAuthorities);
+        return new CustomUser(id,tenantId,username,password,true,true,true,true,grantedAuthorities);
     }
 }

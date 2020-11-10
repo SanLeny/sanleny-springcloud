@@ -4,4 +4,5 @@ cn.sanleny.framework.service.autoconfigure.WebAppAutoConfiguration,\
 cn.sanleny.framework.service.autoconfigure.MybatisPlusAutoConfiguration,\
 cn.sanleny.framework.service.autoconfigure.MyBatisPlusMetaObjectHandler,\
 cn.sanleny.framework.service.autoconfigure.FeignConfiguration,\
-cn.sanleny.framework.service.autoconfigure.FeignHystrixConcurrencyStrategy
+cn.sanleny.framework.service.autoconfigure.FeignHystrixConcurrencyStrategy,\
+cn.sanleny.framework.service.autoconfigure.RedisConfiguration

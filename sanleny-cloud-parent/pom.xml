@@ -27,11 +27,12 @@
 
         <!-- mybatis-plus -->
         <mybatis-spring-boot.version>2.1.3</mybatis-spring-boot.version>
-        <mybatis-dynamic.version>3.2.0</mybatis-dynamic.version>
+        <mybatis-dynamic.version>3.2.1</mybatis-dynamic.version>
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
 
         <!-- tool -->
         <hutool.version>5.4.7</hutool.version>
+        <fastjson.version>1.2.73</fastjson.version>
 
 
     </properties>
@@ -113,6 +114,12 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
 
         </dependencies>
