@@ -8,7 +8,8 @@ spring:
             - Path=/auth/**
           filters:
             - StripPrefix=1
-ignore:
-  urls:
-    - /actuator/**
-    - /auth/**
+sanleny:
+  ignore:
+    urls:
+      - /actuator/**
+      - /auth/**

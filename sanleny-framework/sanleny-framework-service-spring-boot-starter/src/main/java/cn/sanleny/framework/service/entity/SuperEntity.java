@@ -21,4 +21,11 @@ public class SuperEntity<T> implements Serializable {
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     protected String id;
 
+    /**
+     * 租户 ID
+     */
+    @Getter
+    @Setter
+    protected String tenantId;
+
 }

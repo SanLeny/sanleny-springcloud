@@ -15,7 +15,7 @@ import java.util.Collection;
  **/
 @Data
 @Configuration
-@ConfigurationProperties("auth")
+@ConfigurationProperties("sanleny.auth")
 public class AuthProperties {
 
     /**

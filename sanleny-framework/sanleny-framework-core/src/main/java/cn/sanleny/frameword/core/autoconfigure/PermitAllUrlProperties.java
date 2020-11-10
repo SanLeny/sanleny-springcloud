@@ -18,7 +18,7 @@ import java.util.List;
 @ConfigurationProperties(prefix = PermitAllUrlProperties.PREFIX)
 public class PermitAllUrlProperties {
 
-    public static final String PREFIX = "ignore";
+    public static final String PREFIX = "sanleny.ignore";
     private static final AntPathMatcher ANT_PATH_MATCHER = new AntPathMatcher();
 
     /**
