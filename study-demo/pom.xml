@@ -7,6 +7,7 @@
     <groupId>cn.sanleny</groupId>
     <artifactId>study-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>study-v1</module>
